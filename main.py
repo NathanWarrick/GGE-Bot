@@ -1,23 +1,26 @@
+#imports
 import os
 import time
-import pyautogui
-import pytesseract
-
-#other files
-from barron import AutoBarron
-from general import General
-from scraper import Scraper
 
 #not sure if i need this
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-barronfarm = AutoBarron
+#other files
+from basic import Basic
+from general import General
+from barron import AutoBarron
+from scraper import Scraper
+
+#type definitions
+bs = Basic
 gl = General
+barronfarm = AutoBarron
 scrape = Scraper
 
 
-#i = 0
-#while i < 1:
-#    barronfarm.attackadvanced(1)
 
-scrape.weeklylootplayers(20)
+i = 0
+while i < 1:
+    barronfarm.attackadvanced(1)
+
+#gl.recruit('Veteran Heavy Crossbowman', '2')

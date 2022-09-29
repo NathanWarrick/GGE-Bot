@@ -5,11 +5,12 @@ import os
 import pytesseract
 
 from general import General
-
+from basic import Basic
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 gl = General
+bs = Basic
 
 class AutoBarron:
         
@@ -19,34 +20,15 @@ class AutoBarron:
                 
         x, y = pyautogui.locateCenterOnScreen('images/robber%d.png' % (level), grayscale=False, confidence=.95)
         pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        x, y = pyautogui.locateCenterOnScreen('images/attack.png', grayscale=False, confidence=.45)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        x, y = pyautogui.locateCenterOnScreen('images/tick.png', grayscale=False, confidence=.8)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        time.sleep(2)
-        
-        x, y = pyautogui.locateCenterOnScreen('images/autofillall.png', grayscale=False, confidence=.8)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        x, y = pyautogui.locateCenterOnScreen('images/confirmattack.png', grayscale=False, confidence=.8)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        time.sleep(.2)
-        x, y = pyautogui.locateCenterOnScreen('images/horse1.png', grayscale=False, confidence=.8)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
-        
-        x, y = pyautogui.locateCenterOnScreen('images/tick.png', grayscale=False, confidence=.8)
-        pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-        pyautogui.click()
+        pyautogui.click()       
+        bs.clickon('images/attack.png', .45, mousedelay)        
+        bs.clickon('images/tick.png', .8, mousedelay)       
+        time.sleep(2)       
+        bs.clickon('images/autofillall.png', .8, mousedelay)       
+        bs.clickon('images/confirmattack.png', .8, mousedelay)        
+        time.sleep(.2)        
+        bs.clickon('images/horse1.png', .8, mousedelay)       
+        bs.clickon('images/tick.png', .8, mousedelay)
         
         time.sleep(.5)
         
@@ -70,41 +52,19 @@ class AutoBarron:
             #commandersremaining = commandersremaining[:-5]
             print('Commanders Remaining %s' % (commandersremaining))
         else:
-            x, y = pyautogui.locateCenterOnScreen('images/Exit Travel Overview.png', grayscale=False)
-            pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-            pyautogui.click()
-            time.sleep(.5)
-            
-            
-            x, y = pyautogui.locateCenterOnScreen('images/robber%d.png' % (level), grayscale=False, confidence=.90, region=(200, 150, 1400, 373))
+            bs.clickon('images/Exit Travel Overview.png', .9, mousedelay)
+            time.sleep(.5)      
+                  
+            x, y = pyautogui.locateCenterOnScreen('images/robber%d.png' % (level), grayscale=False, confidence=.9, ) #region=(200, 150, 1400, 373)
             pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            x, y = pyautogui.locateCenterOnScreen('images/attack.png', grayscale=False, confidence=.45)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            x, y = pyautogui.locateCenterOnScreen('images/tick.png', grayscale=False, confidence=.8)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            time.sleep(2)
-            
-            x, y = pyautogui.locateCenterOnScreen('images/autofillall.png', grayscale=False, confidence=.8)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            x, y = pyautogui.locateCenterOnScreen('images/confirmattack.png', grayscale=False, confidence=.8)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            time.sleep(.2)
-            x, y = pyautogui.locateCenterOnScreen('images/horse1.png', grayscale=False, confidence=.8)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
-            x, y = pyautogui.locateCenterOnScreen('images/tick.png', grayscale=False, confidence=.8)
-            pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
-            pyautogui.click()
-            
+            pyautogui.click()    
+                   
+            bs.clickon('images/attack.png', .45, mousedelay)
+            bs.clickon('images/tick.png', .8, mousedelay)            
+            time.sleep(2)           
+            bs.clickon('images/autofillall.png', .8, mousedelay)
+            bs.clickon('images/confirmattack.png', .8, mousedelay)            
+            time.sleep(.2)            
+            bs.clickon('images/horse1.png', .8, mousedelay)
+            bs.clickon('images/tick.png', .8, mousedelay)            
             time.sleep(.5)

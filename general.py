@@ -4,7 +4,11 @@ import cv2
 import os
 
 
+from basic import Basic
+bs = Basic
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 class General:
     
@@ -28,20 +32,14 @@ class General:
                 pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
                 pyautogui.click()
             except TypeError:
-                x, y = pyautogui.locateCenterOnScreen('images/General/click_button/next.png', grayscale=False, confidence = .9)
-                pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-                pyautogui.click()
+                bs.clickon('images/General/click_button/next.png', .9, .2)
                 continue
             i = 1
         
         #Select Quantity
-        x, y = pyautogui.locateCenterOnScreen('images/General/troops/Buttons/Quantity_Selector.png', grayscale=False, confidence = .7)
-        pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-        pyautogui.click()
+        bs.clickon('images/General/troops/Buttons/Quantity_Selector.png', .7, .2)
         pyautogui.typewrite(quantity, .2)
-        x, y = pyautogui.locateCenterOnScreen('images/General/troops/Buttons/Recruit.png', grayscale=False, confidence = .8)
-        pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-        pyautogui.click()
+        bs.clickon('images/General/troops/Buttons/Recruit.png', .8, .2)
 
     #Produce Requires the recruitment screen to already be open
     def produce(tool, quantity):
@@ -53,20 +51,14 @@ class General:
                 pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
                 pyautogui.click()
             except TypeError:
-                x, y = pyautogui.locateCenterOnScreen('images/General/click_button/next.png', grayscale=False, confidence = .9)
-                pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-                pyautogui.click()
+                bs.clickon('images/General/click_button/next.png', .9, .2)      
                 continue
             i = 1
         
         #Select Quantity
-        x, y = pyautogui.locateCenterOnScreen('images/General/troops/Buttons/Quantity_Selector.png', grayscale=False, confidence = .7)
-        pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-        pyautogui.click()
+        bs.clickon('images/General/troops/Buttons/Quantity_Selector.png', .7, .2) 
         pyautogui.typewrite(quantity, .2)
-        x, y = pyautogui.locateCenterOnScreen('images/General/tools/Buttons/Produce.png', grayscale=False, confidence = .8)
-        pyautogui.moveTo(x, y, .2, pyautogui.easeInQuad)
-        pyautogui.click()
+        bs.clickon('images/General/tools/Buttons/Produce.png', .8, .2)
         
     def travel(location):
         x, y = pyautogui.locateCenterOnScreen('images/General/click_button/%s/%s.png' % (location, location), grayscale=False)
