@@ -1,9 +1,7 @@
-from lib2to3.pytree import type_repr
 import pyautogui
 import time
 import cv2
 import os
-import pytesseract
 
 from general import General
 from basic import Basic
