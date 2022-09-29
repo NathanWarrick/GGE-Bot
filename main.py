@@ -1,6 +1,12 @@
 #imports
 import os
 import time
+import pyautogui
+import pytesseract
+import cv2 as cv
+import numpy as np
+from PIL import Image
+import PIL
 
 #not sure if i need this
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -22,5 +28,3 @@ scrape = Scraper
 i = 0
 while i < 1:
     barronfarm.attackadvanced(1)
-
-#gl.recruit('Veteran Heavy Crossbowman', '2')
