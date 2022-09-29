@@ -19,7 +19,7 @@ class AutoBarron:
         
         mousedelay = .2
                 
-        x, y = pyautogui.locateCenterOnScreen('images/robber%d.png' % (level), grayscale=False, confidence=.95)
+        x, y = pyautogui.locateCenterOnScreen('images/General/robber%d.png' % (level), grayscale=False, confidence=.95, region=(160, 150, 1510, 680)) #region=(200, 150, 1360, 370)
         pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
         pyautogui.click()       
         bs.clickon('images/General/attack.png', .45, mousedelay)        
@@ -52,13 +52,13 @@ class AutoBarron:
                 bs.clickon('images/General/Exit Travel Overview.png', .8, mousedelay)
                 time.sleep(.5)      
                     
-                x, y = pyautogui.locateCenterOnScreen('images/robber%d.png' % (level), grayscale=False, confidence=.95, ) #region=(200, 150, 1400, 373)
+                x, y = pyautogui.locateCenterOnScreen('images/General/robber%d.png' % (level), grayscale=False, confidence=.95, region=(160, 150, 1510, 680)) #region=(200, 150, 1400, 373)
                 pyautogui.moveTo(x, y, mousedelay, pyautogui.easeInQuad)
                 pyautogui.click()    
                     
                 bs.clickon('images/General/attack.png', .45, mousedelay)
                 bs.clickon('images/General/tick.png', .8, mousedelay)            
-                time.sleep(2)           
+                time.sleep(3)           
                 bs.clickon('images/General/autofillall.png', .8, mousedelay)
                 bs.clickon('images/General/confirmattack.png', .8, mousedelay)            
                 time.sleep(.2)            
