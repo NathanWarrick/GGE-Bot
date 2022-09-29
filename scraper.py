@@ -12,6 +12,8 @@ from general import General
 gl = General
 
 
+
+
 class Scraper:
     
     def weeklylootplayers(row_count):

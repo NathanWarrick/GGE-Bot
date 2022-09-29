@@ -16,7 +16,8 @@ gl = General
 scrape = Scraper
 
 
+#i = 0
+#while i < 1:
+#    barronfarm.attackadvanced(1)
 
-i = 0
-while i < 1:
-    barronfarm.attackadvanced(1)
+scrape.weeklylootplayers(20)
